@@ -1,5 +1,7 @@
+import s from './painting.module.css'
+
 export const PaintingList = (props)=>{
-    return <ul>
+    return <ul className={s.list}>
       {props.data.map((paintCard) => {
         return <li key={paintCard.id}>
     <img src={paintCard.url} alt="..." width="480"/>
