@@ -1,8 +1,10 @@
 import PropTypes from 'prop-types'
-import s from './Alert.module.css'
+
+import { AlertStyled } from './Alert.styled'
+
 
 export const Alert = ({text, type})=>{
-    return <p className={s[type]}>{text}</p>
+    return <AlertStyled type={type}>{text}</AlertStyled>
 }
 
 Alert.propTypes = {
