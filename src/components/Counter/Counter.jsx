@@ -1,14 +1,14 @@
 import { Component } from 'react';
 
 export class Counter extends Component {
-    state = {
-        counter: 0
-    }
-  handleClickPlus = (e) => { 
-    this.setState(prevState=>( {counter: prevState.counter += 1}))
+  state = {
+    counter: 0,
   };
-  handleClickMinus = (e) => { 
-    this.setState(prevState=>( {counter: prevState.counter -= 1}))
+  handleClickPlus = e => {
+    this.setState(prevState => ({ counter: (prevState.counter += 1) }));
+  };
+  handleClickMinus = e => {
+    this.setState(prevState => ({ counter: (prevState.counter -= 1) }));
   };
   render() {
     return (
@@ -28,7 +28,7 @@ export class Counter extends Component {
               </button>
               <button
                 className="btn  btn-outline-danger ms-5"
-                  onClick={this.handleClickMinus}
+                onClick={this.handleClickMinus}
               >
                 <i className="bi bi-dash-circle fs-1"></i>
               </button>

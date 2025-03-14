@@ -1,12 +1,15 @@
-import {colorPickerOptions} from './ColorPikerData'
+import { Component } from 'react'
+export class ColorPiker extends Component{
 
-export const ColorPiker = (props)=>{
-    return <ul>
-        {props.colors.map((piker)=>{
+    render(){
+        return <ul>
+        {this.props.colors.map((piker)=>{
            return <li>
                 <h1>{piker.label}</h1>
-                <div style={{backgroundColor: piker.color, width: '50px',height: '50px'}}></div>
+                <div onClick={()=>{this.props.choose(piker.label)}} style={{backgroundColor: piker.color, width: '50px',height: '50px'}}></div>
             </li>
         })}
     </ul>
+    }
+    
 }
