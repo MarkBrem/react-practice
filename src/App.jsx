@@ -15,20 +15,33 @@ import { Label } from 'components/ColorPiker/Label';
 import { Component } from 'react';
 import { render } from '@testing-library/react';
 import { Form2 } from 'Form2.0/Form2.0';
+import { PForm } from 'components/Pokemon/PForm';
+import { Pokemon } from 'components/Pokemon/PokemonInfo';
 
 export class App extends Component{
   state = {
     label: '',
+    pokemonName: '',
   };
 
-  ChooseLabel = (currentLabel) => {
-    this.setState({label: currentLabel})
-  };
+
+  onName = (name)=>{
+    this.setState({pokemonName: name})
+  }
+
+
+  // ChooseLabel = (currentLabel) => {
+  //   this.setState({label: currentLabel})
+  // };
 
   render() {
     return (
       <>
-       <Form2/>
+       <PForm 
+       onName= {this.onName}/>
+       <Pokemon 
+       name = {this.state.pokemonName}/>
+       {/* <Form2/> */}
         {/* <Label label={this.state.label} />
         <ColorPiker 
         choose = {this.ChooseLabel}
@@ -53,6 +66,7 @@ export class App extends Component{
         {/* <Message message = 'Це виконане завдання' />  */}
         {/* <PaintingList data = {data} /> */}
         {/* <Greeting name = 'Marko'/> */}
+        
       </>
     );
   }
