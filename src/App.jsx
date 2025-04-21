@@ -37,10 +37,11 @@ export class App extends Component{
   render() {
     return (
       <>
-       <PForm 
+      <Counter/>
+       {/* <PForm 
        onName= {this.onName}/>
        <Pokemon 
-       name = {this.state.pokemonName}/>
+       name = {this.state.pokemonName}/> */}
        {/* <Form2/> */}
         {/* <Label label={this.state.label} />
         <ColorPiker 

@@ -1,28 +1,29 @@
-import { Component } from 'react';
+import { Component, useState } from 'react';
+import s from './Form.module.css';
 
-export class PForm extends Component {
-  state = {
-    pokemonName: '',
+export const PForm = ({ onName }) => {
+  const [pokemonName, setPokemonName] = useState('');
+
+  const onHandleChange = e => {
+    setPokemonName(e.currentTarget.value);
   };
 
-  onHandleChange = (e)=>{
-    this.setState({
-        pokemonName: e.currentTarget.value
-    })
-  }
+  const handleName = e => {
+    e.preventDefault();
+    onName(pokemonName);
+  };
 
-  handleName = (e)=>{
-    e.preventDefault()
-    this.props.onName(this.state.pokemonName)
-  }
-
-  render(){
-    return <form onSubmit={this.handleName} action="">
-    <input
-      value={this.state.pokemonName}
-      onChange={this.onHandleChange}
-      type="text"/>
-    <button type="submit">Надіслати</button>
-  </form>;
-  }
-}
+  return (
+    <form className={s.form} onSubmit={handleName} action="">
+      <input
+        className={s.inp}
+        value={pokemonName}
+        onChange={onHandleChange}
+        type="text"
+      />
+      <button className={s.btn} type="submit">
+        Надіслати
+      </button>
+    </form>
+  );
+};

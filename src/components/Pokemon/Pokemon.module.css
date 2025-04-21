@@ -1,0 +1,18 @@
+.error{
+    background-color: red;
+    color: white;
+}
+
+.div{
+
+    display: flex;
+    width: 500px;
+    flex-direction: column;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.divtext{
+    margin-right: auto;
+    margin-left: auto;
+}
