@@ -17,26 +17,36 @@ import { render } from '@testing-library/react';
 import { Form2 } from 'Form2.0/Form2.0';
 import { PForm } from 'components/Pokemon/PForm';
 import { Pokemon } from 'components/Pokemon/PokemonInfo';
+import { Timer } from 'components/Timer';
+import { Button } from 'components/context/Context1';
+import { Message } from 'components/context/Context2';
+import { App2 } from 'components/context/App';
 
-export class App extends Component{
-  state = {
-    label: '',
-    pokemonName: '',
-  };
+export const App =()=>{
+  
+  // state = {
+  //   label: '',
+  //   pokemonName: '',
+  //   timerState: false
+  // };
 
 
-  onName = (name)=>{
-    this.setState({pokemonName: name})
-  }
+  // onName = (name)=>{
+  //   this.setState({pokemonName: name})
+  // }
 
 
   // ChooseLabel = (currentLabel) => {
   //   this.setState({label: currentLabel})
   // };
 
-  render() {
     return (
       <>
+      {/* <App2/> */}
+      {/* <button onClick={
+        ()=>{this.setState((prevState)=>({timerState: !prevState.timerState}))}
+      }>Показати таймер</button>
+      {this.state.timerState && <Timer/>} */}
       <Counter/>
        {/* <PForm 
        onName= {this.onName}/>
@@ -71,4 +81,4 @@ export class App extends Component{
       </>
     );
   }
-}
+
